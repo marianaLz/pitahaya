@@ -1,41 +1,31 @@
 import React from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import { Container, Flex, Image, Text } from '@chakra-ui/react';
-
-import bahia from '../../../assets/images/bahia.png';
-import capptus from '../../../assets/images/capptus.png';
-import enio from '../../../assets/images/enio.png';
-import idmah from '../../../assets/images/idmah.png';
-import inside from '../../../assets/images/inside.png';
-import ironhack from '../../../assets/images/ironhack.png';
-import kalimori from '../../../assets/images/kalimori.png';
-import konfio from '../../../assets/images/konfio.png';
-import kuxatur from '../../../assets/images/kuxatur.png';
-import laboratoria from '../../../assets/images/laboratoria.png';
-import morgana from '../../../assets/images/morgana.png';
-import natoure from '../../../assets/images/natoure.png';
-import openn from '../../../assets/images/openn.png';
-import plib from '../../../assets/images/plib.png';
-
-const images = [
-  bahia,
-
-  capptus,
-  enio,
-  idmah,
-  inside,
-  plib,
-  kalimori,
-  konfio,
-  laboratoria,
-  morgana,
-  natoure,
-  ironhack,
-  kuxatur,
-  openn,
-];
+import { Container, Flex, Text } from '@chakra-ui/react';
 
 const Clients = () => {
+  const { gallery } = useStaticQuery(graphql`
+    query {
+      gallery: allFile(
+        filter: {
+          extension: { eq: "png" }
+          absolutePath: { regex: "/images/home/" }
+        }
+      ) {
+        nodes {
+          childImageSharp {
+            gatsbyImageData(
+              height: 64
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Flex as='section' id='clients'>
       <Container
@@ -57,15 +47,20 @@ const Clients = () => {
           gap={{ base: '12', md: '16' }}
           justify='center'
         >
-          {images.map((image, index) => (
-            <Image
-              alt='Clientes Pitahaya'
-              key={`image-${index}`}
+          {gallery.nodes.map((image, index) => (
+            <Flex
+              align='center'
+              justify='center'
               maxH={{ base: '10', md: '16' }}
               maxW={{ base: '32', md: '40' }}
-              objectFit='contain'
-              src={image}
-            />
+            >
+              <GatsbyImage
+                alt='Clientes Pitahaya'
+                key={`image-${index}`}
+                image={getImage(image)}
+                objectFit='cover'
+              />
+            </Flex>
           ))}
         </Flex>
       </Container>

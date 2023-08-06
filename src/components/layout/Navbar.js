@@ -36,7 +36,11 @@ const Navbar = () => {
       <List as={Flex} flexDir={{ base: 'column', lg: 'row' }} gap='8'>
         {links.map((link, index) => (
           <ListItem key={`link-${index}`}>
-            <Link to={link.to} onClick={onClose}>
+            <Link
+              aria-label={`menu-item-${index + 1}`}
+              onClick={onClose}
+              to={link.to}
+            >
               <Flex align='center' gap='2'>
                 <Text color='#257157' fontFamily='Spinwerad' fontSize='3xl'>
                   0{index + 1}
@@ -82,7 +86,7 @@ const Navbar = () => {
             bg='#257157'
             icon={<FiMenu color='white' />}
             isRound
-            name='menu'
+            aria-label='menu'
             onClick={onOpen}
           />
         </Hide>

@@ -3,8 +3,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `pitahaya`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: 'pitahaya',
+    siteUrl: 'https://www.yourdomain.tld',
   },
   plugins: [
     {
@@ -27,14 +27,24 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/assets/images/icon.png',
-        name: `Pitahaya Studio`,
-        short_name: `Pitahaya`,
-        start_url: `/`,
-        background_color: `#257157`,
-        theme_color: `#257157`,
-        display: `standalone`,
+        name: 'Pitahaya Studio',
+        short_name: 'Pitahaya',
+        start_url: '/',
+        background_color: '#257157',
+        theme_color: '#257157',
+        display: 'standalone',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-offline',
   ],
 };

@@ -11,7 +11,7 @@ import Manifest from '../components/sections/Home/Manifest';
 import Pitahaya from '../components/sections/Home/Pitahaya';
 import Services from '../components/sections/Home/Services';
 
-const IndexPage = () => {
+const IndexPage = (props) => {
   return (
     <Layout>
       <Flex as='main' flexDir='column'>
