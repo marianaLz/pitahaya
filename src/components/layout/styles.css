@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Spinwerad';
+  src: local('Spinwerad'),
+    url('../../assets/fonts/spinwerad.ttf') format('trueType');
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+}
