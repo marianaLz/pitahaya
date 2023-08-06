@@ -44,7 +44,7 @@ const About = () => {
         align='center'
         as={Flex}
         flexDir='column'
-        gap={{ base: '16', lg: '32' }}
+        gap={{ base: '16', lg: '40' }}
         maxW={{ xl: 'container.xl', '2xl': '8xl' }}
         minH={{ lg: '100vh' }}
         pt='32'

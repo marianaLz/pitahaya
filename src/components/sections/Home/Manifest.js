@@ -58,13 +58,14 @@ const Manifest = () => {
         as={Flex}
         flexDir='column'
         gap='6'
-        overflow='hidden'
-        ref={emblaRef}
+        justify='center'
         maxW={{ lg: 'container.lg', xl: 'container.xl', '2xl': '8xl' }}
         minH={{ lg: '100vh' }}
+        overflow='hidden'
         pos='relative'
         pt='32'
         pb='20'
+        ref={emblaRef}
         w='full'
       >
         <Hide below='lg'>
