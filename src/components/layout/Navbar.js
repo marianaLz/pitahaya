@@ -82,6 +82,7 @@ const Navbar = () => {
             bg='#257157'
             icon={<FiMenu color='white' />}
             isRound
+            name='menu'
             onClick={onOpen}
           />
         </Hide>

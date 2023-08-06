@@ -2,6 +2,7 @@
 
 @font-face {
   font-family: 'Spinwerad';
+  font-display: auto;
   src: local('Spinwerad'),
     url('../../assets/fonts/spinwerad.ttf') format('trueType');
 }

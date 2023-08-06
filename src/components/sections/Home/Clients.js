@@ -7,7 +7,7 @@ import capptus from '../../../assets/images/capptus.png';
 import enio from '../../../assets/images/enio.png';
 import idmah from '../../../assets/images/idmah.png';
 import inside from '../../../assets/images/inside.png';
-import ironhack from '../../../assets/images/ironhack.jpeg';
+import ironhack from '../../../assets/images/ironhack.png';
 import kalimori from '../../../assets/images/kalimori.png';
 import konfio from '../../../assets/images/konfio.png';
 import kuxatur from '../../../assets/images/kuxatur.png';
