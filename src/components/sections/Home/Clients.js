@@ -59,6 +59,7 @@ const Clients = () => {
         >
           {images.map((image, index) => (
             <Image
+              alt='Clientes Pitahaya'
               key={`image-${index}`}
               maxH={{ base: '10', md: '16' }}
               maxW={{ base: '32', md: '40' }}

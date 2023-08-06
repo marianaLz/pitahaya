@@ -100,7 +100,7 @@ const Services = () => {
                   key={`service-${index}`}
                   w='full'
                 >
-                  <Text as='h2' fontWeight='bold'>
+                  <Text as='h3' fontWeight='bold'>
                     {service}
                   </Text>
                   <Divider borderColor='rgba(0,0,0,0.2)' w='12' />

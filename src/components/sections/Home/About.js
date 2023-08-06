@@ -87,7 +87,12 @@ const About = () => {
           </Flex>
           <Flex flexDir='column' gap='8'>
             <Box w={{ base: '64', md: '80', xl: '96' }}>
-              <Image bg='#C1DEC0' borderRadius='full' src={item.img} />
+              <Image
+                alt={item.name}
+                bg='#C1DEC0'
+                borderRadius='full'
+                src={item.img}
+              />
             </Box>
             <Flex flexDir='column'>
               <Text

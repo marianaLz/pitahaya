@@ -27,6 +27,12 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/assets/images/icon.png',
+        name: `Pitahaya Studio`,
+        short_name: `Pitahaya`,
+        start_url: `/`,
+        background_color: `#257157`,
+        theme_color: `#257157`,
+        display: `standalone`,
       },
     },
   ],

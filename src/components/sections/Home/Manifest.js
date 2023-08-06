@@ -97,7 +97,7 @@ const Manifest = () => {
             </Text>
 
             <Flex
-              as='h3'
+              as='h2'
               color='#F590A2'
               flexDir='column'
               fontSize='lg'
