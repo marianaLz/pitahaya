@@ -45,7 +45,10 @@ const About = () => {
         <Container
           align='center'
           as={Flex}
-          flexDir={{ base: 'column-reverse', lg: 'row' }}
+          flexDir={{
+            base: 'column-reverse',
+            lg: index % 2 === 0 ? 'row' : 'row-reverse',
+          }}
           gap={{ base: '8', lg: '16', xl: '32' }}
           key={`about-${index}`}
           maxW={{ xl: 'container.xl', '2xl': '8xl' }}

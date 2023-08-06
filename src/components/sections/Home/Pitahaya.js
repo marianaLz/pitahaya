@@ -34,14 +34,14 @@ const Pitahaya = () => {
           gap={{ base: '6', lg: '12', xl: '24' }}
         >
           <Flex flexDir='column' gap={{ base: '6', lg: '8' }}>
-            <Text fontWeight='bold'>
+            <Text as='h1' fontWeight='bold'>
               Somos un laboratorio de creación de páginas web.
             </Text>
             <Text>
               Un equipo de mujeres mexicanas en la industria de la tecnología,
-              (Software engineer + Product designer), una dupla con la filosofía
-              de ser participes en proyectos que tengan un impacto positivo en
-              la era digital.
+              (Software Developer + Product Designer), una dupla con la
+              filosofía de ser participes en proyectos que tengan un impacto
+              positivo en la era digital.
             </Text>
           </Flex>
           <Flex flexDir='column' gap={{ base: '6', lg: '8' }}>

@@ -5,19 +5,19 @@ import { Container, Flex, Text } from '@chakra-ui/react';
 
 const info = [
   {
-    firstLine: 'Pensar',
-    secondLine: 'Fuera de la caja',
+    firstLine: 'Pensar ',
+    secondLine: 'fuera de la caja',
     description:
       'Cambiamos nuestra perspectiva y forma de pensar poniéndonos en el lugar de otra persona.',
   },
   {
-    firstLine: 'Soñar',
-    secondLine: 'Despierto',
+    firstLine: 'Soñar ',
+    secondLine: 'despierto',
     description:
       'Esta metáfora la utilizamos para hacer reales los productos digitales que desean nuestros clientes.',
   },
   {
-    firstLine: 'Estimular',
+    firstLine: 'Estimular ',
     secondLine: 'la creatividad',
     description:
       'La combinación multidisciplinar nos permite encontrar el plan ideal para resolver problemas.',
@@ -97,6 +97,7 @@ const Manifest = () => {
             </Text>
 
             <Flex
+              as='h3'
               color='#F590A2'
               flexDir='column'
               fontSize='lg'
