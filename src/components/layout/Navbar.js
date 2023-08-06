@@ -37,7 +37,7 @@ const Navbar = () => {
         {links.map((link, index) => (
           <ListItem key={`link-${index}`}>
             <Link
-              aria-label={`menu-item-${index + 1}`}
+              aria-label={`Ir la la sección ${link.name}`}
               onClick={onClose}
               to={link.to}
             >
@@ -86,7 +86,7 @@ const Navbar = () => {
             bg='#257157'
             icon={<FiMenu color='white' />}
             isRound
-            aria-label='menu'
+            aria-label='Abrir menú de navegación'
             onClick={onOpen}
           />
         </Hide>
