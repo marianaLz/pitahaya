@@ -153,25 +153,27 @@ const Services = () => {
             </Flex>
           ))}
         </Flex>
-        <Flex gap='6' justify='center'>
-          {info.map((_, index) => (
-            <Box
-              aria-label={`Ir a la slide ${index + 1}`}
-              as='button'
-              bg={
-                index === selectedIndex ? '#257157' : 'rgba(37, 113, 87, 0.2)'
-              }
-              borderRadius='full'
-              className='embla__dot'
-              h='4'
-              key={`manifest-dot-${index}}`}
-              onClick={() => scrollTo(index)}
-              px='2'
-              transition='all 0.3s ease'
-              w='4'
-            />
-          ))}
-        </Flex>
+        <Hide above='lg'>
+          <Flex gap='6' justify='center'>
+            {info.map((_, index) => (
+              <Box
+                aria-label={`Ir a la slide ${index + 1}`}
+                as='button'
+                bg={
+                  index === selectedIndex ? '#257157' : 'rgba(37, 113, 87, 0.2)'
+                }
+                borderRadius='full'
+                className='embla__dot'
+                h='4'
+                key={`manifest-dot-${index}}`}
+                onClick={() => scrollTo(index)}
+                px='2'
+                transition='all 0.3s ease'
+                w='4'
+              />
+            ))}
+          </Flex>
+        </Hide>
       </Container>
     </Flex>
   );
