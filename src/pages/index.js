@@ -41,8 +41,20 @@ export const Head = () => (
       property='og:title'
       content='Pitahaya Studio | Laboratorio de creación de páginas web'
     />
+    <meta
+      property='og:description'
+      content='Un equipo de mujeres mexicanas en la industria de la tecnología, (Software engineer + Product designer), una dupla con la filosofía de ser participes en proyectos que tengan un impacto positivo en la era digital.'
+    />
     <meta property='og:type' content='website' />
     <meta property='og:url' content='https://pitahaya.studio' />
-    <meta property='og:image' content='https://i.imgur.com/1z08HOE.png' />
+    <meta property='og:image' content='https://i.imgur.com/0NtE0D7.png' />
+    <meta
+      property='og:image:secure_url'
+      content='https://i.imgur.com/0NtE0D7.png'
+    />
+    <meta property='og:image:type' content='image/jpeg' />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />
+    <meta property='og:image:alt' content='Pitahaya Studio' />
   </React.Fragment>
 );
