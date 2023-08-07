@@ -38,6 +38,10 @@ export const Head = () => (
     <meta name='robots' content='INDEX,FOLLOW' />
     <link rel='canonical' href='https://pitahaya.studio' />
     <meta
+      property='og:site_name'
+      content='Pitahaya Studio | Laboratorio de creación de páginas web'
+    />
+    <meta
       property='og:title'
       content='Pitahaya Studio | Laboratorio de creación de páginas web'
     />
@@ -56,5 +60,12 @@ export const Head = () => (
     <meta property='og:image:width' content='1200' />
     <meta property='og:image:height' content='627' />
     <meta property='og:image:alt' content='Pitahaya Studio' />
+    <meta property='og:locale' content='es_MX' />
+    <meta property='twitter:card' content='summary_large_image' />
+    <meta property='twitter:title' content='Pitahaya Studio' />
+    <meta
+      property='twitter:description'
+      content='Un equipo de mujeres mexicanas en la industria de la tecnología, (Software engineer + Product designer), una dupla con la filosofía de ser participes en proyectos que tengan un impacto positivo en la era digital.'
+    />
   </React.Fragment>
 );
