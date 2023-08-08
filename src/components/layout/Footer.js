@@ -50,29 +50,33 @@ const Footer = () => {
                 </Text>
                 <Flex align='center' gap='1' target='__blank'>
                   <CiMail />
-                  <Text as='a' fontSize='xs' href={`mailto:${item.mail}`}>
+                  <Text as='a' fontSize='sm' href={`mailto:${item.mail}`}>
                     {item.mail}
                   </Text>
                 </Flex>
-                <Flex align='center' gap='1' target='__blank'>
+                <Flex align='center' gap='1'>
                   <CiLinkedin />
                   <Text
                     as='a'
-                    fontSize='xs'
+                    fontSize='sm'
                     href={`https://www.linkedin.com/in/${item.linkedin}`}
+                    rel='noopener noreferrer'
+                    target='_blank'
                   >
-                    {item.linkedin}
+                    in/{item.linkedin}
                   </Text>
                 </Flex>
               </Flex>
             ))}
           </Flex>
-          <Flex align='center' gap='1' target='__blank'>
+          <Flex align='center' gap='1'>
             <CiInstagram />
             <Text
               as='a'
-              fontSize='xs'
+              fontSize='sm'
               href='https://www.instagram.com/pitahaya.web/'
+              rel='noopener noreferrer'
+              target='_blank'
             >
               Síguenos en Instagram
             </Text>
