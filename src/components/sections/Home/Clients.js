@@ -32,7 +32,7 @@ const Clients = () => {
         align='center'
         as={Flex}
         maxW={{ lg: 'container.lg', xl: 'container.xl', '2xl': '8xl' }}
-        minH={{ lg: 'calc(100vh - 158px)' }}
+        minH={{ lg: 'calc(100vh - 167px)' }}
         pos='relative'
         pt='32'
         pb='20'
