@@ -5,21 +5,20 @@ import { Box, Container, Flex, Hide, Text } from '@chakra-ui/react';
 import Ana from '../../../assets/vector/Ana';
 import Anita from '../../../assets/vector/Anita';
 import Mari from '../../../assets/vector/Mari';
-import MariGala from '../../../assets/vector/MariGala';
+import Mariana from '../../../assets/vector/Mariana';
 
 const info = [
   {
     name: 'Mari López',
     shortName: 'mari',
     role: 'Software Developer',
-    img: <MariGala />,
+    img: <Mariana />,
     text: <Mari />,
     description: [
-      'Creo firmemente en el empoderamiento y la igualdad de género de las mujeres.',
-      'Como Desarrolladora de Software y coach de programación, me apasiona guiar a mujeres en el camino Tech.',
-      'Tengo experiencia colaborando dentro de equipos multidisciplinarios, lo cual me ha permitido tomar en cuenta muchos factores implicados en el desarrollo para proponer soluciones y tomar decisiones objetivas.',
-      'Me resulta muy importante poder colaborar con empresas que generen impacto, ya que mi mayor motivación en la vida es contribuir a un cambio positivo en la sociedad, bajo esta "filosofía" es que he elegido las empresas en las que colaboro.',
-      'Considero que la educación y la conciencia son fundamentales para impulsar el cambio.',
+      'Desarrolladora Web con casi 5 años de experiencia en la industria. Actualmente soy Lead Coach en Laboratoria, una organización comprometida con el desarrollo de carreras tecnológicas para mujeres, donde he aspirado a empoderar a más mujeres en el campo de la tecnología.',
+      'Mi trayectoria previa incluye más de tres años de experiencia en empresas de tecnología, desde startups hasta banca digital.',
+      'Tengo experiencia colaborando dentro de equipos multidisciplinarios, lo cual me ha permitido tomar en cuenta muchos factores implicados en el desarrollo de un producto para proponer soluciones y tomar decisiones objetivas.',
+      'Me resulta muy importante poder colaborar con empresas que generen gran impacto ya que mi mayor motivación en la vida es contribuir a un cambio positivo en la sociedad.',
     ],
   },
   {
@@ -90,8 +89,10 @@ const About = () => {
             </Flex>
             <Flex flexDir='column' gap='8'>
               <Box
+                bg='#C1DEC0'
                 borderRadius='full'
                 overflow='hidden'
+                pt='4'
                 w={{ base: '64', md: '80', xl: '96' }}
               >
                 {item.img}
