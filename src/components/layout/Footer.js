@@ -1,8 +1,12 @@
 import React from 'react';
 
-import { CiInstagram, CiLinkedin, CiMail } from 'react-icons/ci';
+import { Box, Container, Flex, Icon, Text } from '@chakra-ui/react';
 
-import { Box, Container, Flex, Text } from '@chakra-ui/react';
+import {
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconMail,
+} from '@tabler/icons-react';
 
 const info = [
   {
@@ -49,13 +53,13 @@ const Footer = () => {
                   {item.name}
                 </Text>
                 <Flex align='center' gap='1' target='__blank'>
-                  <CiMail />
+                  <Icon as={IconMail} />
                   <Text as='a' fontSize='sm' href={`mailto:${item.mail}`}>
                     {item.mail}
                   </Text>
                 </Flex>
                 <Flex align='center' gap='1'>
-                  <CiLinkedin />
+                  <Icon as={IconBrandLinkedin} />
                   <Text
                     as='a'
                     fontSize='sm'
@@ -70,7 +74,7 @@ const Footer = () => {
             ))}
           </Flex>
           <Flex align='center' gap='1'>
-            <CiInstagram />
+            <Icon as={IconBrandInstagram} />
             <Text
               as='a'
               fontSize='sm'

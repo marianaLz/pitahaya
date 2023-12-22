@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { FiMenu } from 'react-icons/fi';
+import { IconMenu } from '@tabler/icons-react';
 
 import {
   Box,
@@ -84,7 +84,7 @@ const Navbar = () => {
         <Hide above='lg'>
           <IconButton
             bg='#257157'
-            icon={<FiMenu color='white' />}
+            icon={<IconMenu color='white' />}
             isRound
             aria-label='Abrir menú de navegación'
             onClick={onOpen}
