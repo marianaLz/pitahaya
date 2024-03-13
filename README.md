@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="" rel="noopener">
+  <a href="https://pitahaya.studio/" rel="noopener">
  <img width=300px src="https://i.imgur.com/1z08HOE.png" alt="Project logo"></a>
 </p>
 
@@ -27,6 +27,8 @@ We believe in our mission to design products and create experiences that drive p
 - Attractive and functional design that highlights the identity of our project.
 - Optimized user experience to ensure easy and smooth navigation.
 - Fully responsive and compatible with mobile devices to reach a wider audience.
+
+Visit the website [here](https://pitahaya.studio/)
 
 ## 🛠️ Built Using <a name = "built_using"></a>
 
