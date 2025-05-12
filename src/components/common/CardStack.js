@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { Flex } from '@chakra-ui/react';
 
@@ -7,15 +7,15 @@ import Marianita from '../../assets/vector/Marianita';
 
 const CardStack = () => {
   const [active, setActive] = useState('Anita');
-  const [height, setHeight] = useState(0);
+  const [height, setHeight] = useState(448);
 
   const ref = useRef(null);
 
   const toggle = () =>
     setActive((prev) => (prev === 'Anita' ? 'Marianita' : 'Anita'));
 
-  useLayoutEffect(() => {
-    if (ref.current) {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && ref.current) {
       setHeight(ref.current.offsetHeight);
     }
   }, [active]);

@@ -8,8 +8,9 @@ const useScrollRotateScale = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || !ref.current) return;
+
     const node = ref.current;
-    if (!node) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsActive(entry.isIntersecting),
@@ -22,7 +23,7 @@ const useScrollRotateScale = () => {
   }, []);
 
   useEffect(() => {
-    if (!isActive) return;
+    if (typeof window === 'undefined' || !isActive) return;
 
     const handleScroll = () => {
       const currentScroll = window.scrollY;
