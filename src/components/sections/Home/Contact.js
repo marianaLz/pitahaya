@@ -31,6 +31,7 @@ const Contact = () => {
         <ContactTitle w={{ base: 56, md: 64, lg: 72, xl: 80 }} />
 
         <Flex
+          action='/pages/success'
           align='center'
           as='form'
           data-netlify='true'
@@ -40,8 +41,7 @@ const Contact = () => {
           name='contact'
           w='full'
         >
-          <input type='hidden' name='_next' value='https://pitahaya.studio/' />
-          <input type='hidden' name='_captcha' value='false' />
+          <input type='hidden' name='form-name' value='contact' />
 
           <Grid
             templateColumns={{
