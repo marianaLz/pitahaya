@@ -1,27 +1,20 @@
 import React from 'react';
 
-import { Box, Container, Flex, Icon, Text } from '@chakra-ui/react';
-
 import {
+  Box,
+  Container,
+  Divider,
+  Flex,
+  IconButton,
+  Text,
+} from '@chakra-ui/react';
+import {
+  IconBrandFacebook,
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconMail,
 } from '@tabler/icons-react';
 
-const info = [
-  {
-    name: 'mari',
-    mail: 'marianaglp15@gmail.com',
-    linkedin: 'marianalz',
-    color: '#FF0080',
-  },
-  {
-    name: 'ana',
-    mail: 'ana.laura.3d@gmail.com',
-    linkedin: 'ana-marrón-3d',
-    color: '#F590A2',
-  },
-];
+import Office from '../../assets/vector/Office';
 
 const Footer = () => {
   return (
@@ -30,65 +23,76 @@ const Footer = () => {
       bg='black'
       boxShadow='1px 1px 10px 0 rgba(0, 0, 0, 0.05)'
       color='white'
+      textAlign={{ base: 'center', lg: 'left' }}
     >
       <Container
-        align={{ md: 'center' }}
         as={Flex}
-        flexDir={{ base: 'column', md: 'row' }}
+        flexDir='column'
         gap='8'
         justify='space-between'
-        maxW={{ lg: 'container.lg', xl: 'container.xl', '2xl': '8xl' }}
+        maxW={{
+          base: 'lg',
+          lg: 'container.lg',
+          xl: 'container.xl',
+        }}
+        py='16'
         w='full'
-        py='8'
       >
-        <Flex flexDir='column' gap='4'>
-          <Flex flexDir={{ base: 'column', md: 'row' }} gap='8'>
-            {info.map((item, index) => (
-              <Flex flexDir='column' key={`contact-${index}`}>
-                <Text
-                  color={item.color}
-                  fontWeight='bold'
-                  letterSpacing='widest'
-                >
-                  {item.name}
-                </Text>
-                <Flex align='center' gap='1' target='__blank'>
-                  <Icon as={IconMail} />
-                  <Text as='a' fontSize='sm' href={`mailto:${item.mail}`}>
-                    {item.mail}
-                  </Text>
-                </Flex>
-                <Flex align='center' gap='1'>
-                  <Icon as={IconBrandLinkedin} />
-                  <Text
-                    as='a'
-                    fontSize='sm'
-                    href={`https://www.linkedin.com/in/${item.linkedin}`}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    in/{item.linkedin}
-                  </Text>
-                </Flex>
-              </Flex>
-            ))}
-          </Flex>
-          <Flex align='center' gap='1'>
-            <Icon as={IconBrandInstagram} />
-            <Text
-              as='a'
-              fontSize='sm'
-              href='https://www.instagram.com/pitahaya.web/'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              Síguenos en Instagram
+        <Flex
+          align={{ base: 'center', lg: 'flex-start' }}
+          flexDir={{ base: 'column', lg: 'row' }}
+          justify='space-between'
+          w='full'
+        >
+          <Flex
+            align={{ base: 'center', lg: 'flex-start' }}
+            flexDir='column'
+            gap='12'
+            maxW='80'
+          >
+            <Text color='#FF889F' fontFamily='Spinwerad' fontSize='3xl'>
+              pitahaya
             </Text>
+            <Text color='white' fontSize={{ base: 'xl', lg: 'sm' }}>
+              Con una oficina virtual flexible, estamos preparadas para
+              colaborar contigo en cualquier rincón del mundo.
+            </Text>
+            <Flex gap='8'>
+              <IconButton
+                icon={<IconBrandFacebook color='#F3E3CB' />}
+                bg='#007355'
+                isRound
+                _hover={{ bg: '#007355' }}
+              />
+              <IconButton
+                icon={<IconBrandInstagram color='#F3E3CB' />}
+                bg='#007355'
+                isRound
+                _hover={{ bg: '#007355' }}
+              />
+              <IconButton
+                icon={<IconBrandLinkedin color='#F3E3CB' />}
+                bg='#007355'
+                isRound
+                _hover={{ bg: '#007355' }}
+              />
+            </Flex>
           </Flex>
+
+          <Office
+            mb='-8'
+            mt={{ base: '24', lg: '8' }}
+            px='4'
+            w={{ base: 'full', md: '96' }}
+          />
         </Flex>
 
-        <Text fontFamily='Spinwerad' fontSize='6xl'>
-          See you!
+        <Divider borderColor='#FF889F' />
+
+        <Text align='center' fontSize={{ base: 'sm', lg: 'xs' }}>
+          Un equipo de mujeres mexicanas en la industria de la tecnología, una
+          dupla con la filosofía de ser participes en proyectos que tengan un
+          impacto positivo en la era digital.
         </Text>
       </Container>
     </Box>

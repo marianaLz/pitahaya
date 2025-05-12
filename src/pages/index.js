@@ -7,9 +7,9 @@ import Layout from '../components/layout';
 import About from '../components/sections/Home/About';
 import Clients from '../components/sections/Home/Clients';
 import Loader from '../components/sections/Home/Loader';
-import Manifest from '../components/sections/Home/Manifest';
 import Pitahaya from '../components/sections/Home/Pitahaya';
 import Services from '../components/sections/Home/Services';
+import Contact from '../components/sections/Home/Contact';
 
 const IndexPage = () => {
   return (
@@ -17,10 +17,10 @@ const IndexPage = () => {
       <Flex as='main' flexDir='column'>
         <Loader />
         <Pitahaya />
-        <Manifest />
         <About />
         <Services />
         <Clients />
+        <Contact />
       </Flex>
     </Layout>
   );

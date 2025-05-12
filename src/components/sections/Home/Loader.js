@@ -6,26 +6,29 @@ import Logo from '../../../assets/vector/Logo';
 
 const Loader = () => {
   const [show, setShow] = useState(true);
+  const [hideCompletely, setHideCompletely] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShow(false);
-    }, 800);
-
-    return () => clearTimeout(timeout);
+    const fadeOut = setTimeout(() => setShow(false), 800);
+    const removeFromFlow = setTimeout(() => setHideCompletely(true), 2300);
+    return () => {
+      clearTimeout(fadeOut);
+      clearTimeout(removeFromFlow);
+    };
   }, []);
 
   return (
     <Flex
       align='center'
-      bg='#257157'
-      h='100vh'
       justify='center'
-      pos='fixed'
-      opacity={show ? '1' : '0'}
-      transition='opacity 1.5s ease, z-index 0s ease 1.5s'
+      position='fixed'
       w='full'
-      zIndex={show ? '2' : '-1'}
+      h='100dvh'
+      bg='#257157'
+      zIndex={hideCompletely ? -1 : 4}
+      opacity={show ? 1 : 0}
+      pointerEvents={hideCompletely ? 'none' : 'auto'}
+      transition='opacity 1.5s ease'
     >
       <Box w={{ base: '80%', lg: '50%' }}>
         <Logo />

@@ -1,180 +1,113 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import React from 'react';
 
-import { Box, Container, Divider, Flex, Hide, Text } from '@chakra-ui/react';
+import { Container, Flex, Hide, SimpleGrid, Text } from '@chakra-ui/react';
 
-const info = [
+import Banners from '../../../assets/vector/Banners';
+import Branding from '../../../assets/vector/Branding';
+import Ecommerce from '../../../assets/vector/Ecommerce';
+import Illustration from '../../../assets/vector/Illustration';
+import ServicesTitle from '../../../assets/vector/ServicesTitle';
+import Usability from '../../../assets/vector/Usability';
+import Website from '../../../assets/vector/Website';
+
+const services = [
   {
-    color: '#257157',
-    links: [
-      'Desarrollo de sitios web',
-      'Mejoras en performance del sitio',
-      'Construcción Design System',
-      'Rediseño de marca',
-      'E-Commerce',
-    ],
+    name: 'Ecommerce',
+    icon: <Ecommerce />,
+    description:
+      'Aumenta tus ventas en el mercado digital y permite compras seguras para ti y tus clientes.',
   },
   {
-    color: '#F590A2',
-    links: [
-      'Branding',
-      'Manual de identidad',
-      'Diseño UX/UI',
-      'Creación de ilustraciones',
-      'Elaboración de infografías y banners',
-    ],
+    name: 'Páginas web',
+    icon: <Website />,
+    description:
+      'Obtén credibilidad en el mundo digital, esta es una herramienta para estar en contacto con clientes potenciales.',
+  },
+  {
+    name: 'UX / UI',
+    icon: <Usability />,
+    description:
+      'Brinda una experiencia positiva y efectiva en el sitio web de tu empresa.',
+  },
+  {
+    name: 'Branding',
+    icon: <Branding />,
+    description:
+      'Construye confianza en los consumidores y establece una identidad sólida y reconocible para ti o tu negocio.',
+  },
+  {
+    name: 'Ilustración',
+    icon: <Illustration />,
+    description:
+      'Mejora la estética y comunicación, de esta manera puedes atraer un público específico de manera efectiva.',
+  },
+  {
+    name: 'Banners',
+    icon: <Banners />,
+    description:
+      'Presenta información compleja de manera visualmente atractiva y fácil de entender.',
   },
 ];
 
+const ServiceCard = ({ icon, name, description }) => (
+  <Flex
+    direction='column'
+    gap={6}
+    px={8}
+    py={10}
+    bg='white'
+    border='2px'
+    borderColor='black'
+    borderRadius='xl'
+    transition='all 0.3s ease'
+    _hover={{
+      transform: 'translateY(-8px)',
+      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+    }}
+  >
+    <Flex align='center' gap={4}>
+      {icon}
+      <Text flex={1} fontSize='xl' fontWeight='semibold' color='black'>
+        {name}
+      </Text>
+    </Flex>
+    <Text fontSize='sm'>{description}</Text>
+  </Flex>
+);
+
 const Services = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    active: true,
-    align: 'end',
-    breakpoints: {
-      '(min-width: 768px)': { active: false },
-    },
-  });
-
-  const scrollTo = useCallback(
-    (index) => emblaApi && emblaApi.scrollTo(index),
-    [emblaApi]
-  );
-
-  useEffect(() => {
-    emblaApi &&
-      emblaApi.on('select', () =>
-        setSelectedIndex(emblaApi.selectedScrollSnap())
-      );
-  }, [emblaApi]);
-
   return (
-    <Flex as='section' bg='#C1DEC0' id='services' pos='relative'>
-      <Hide above='lg'>
-        <Text color='#257157' fontSize='sm' left='4' pos='absolute' top='20'>
-          servicios;
-        </Text>
-      </Hide>
+    <Flex as='section' bg='#f5f5f5' id='services'>
       <Container
         as={Flex}
-        flexDir='column'
-        gap='6'
-        justify='center'
-        maxW={{ lg: 'container.lg', xl: 'container.xl', '2xl': '8xl' }}
-        minH={{ lg: '100vh' }}
-        overflow='hidden'
-        pos='relative'
-        pt='32'
-        pb='20'
-        ref={emblaRef}
+        direction='column'
+        align='center'
+        gap={8}
+        py={{ base: 16, lg: 32 }}
+        maxW={{ base: 'lg', lg: 'container.lg' }}
         w='full'
       >
-        <Hide below='lg'>
-          <Text color='#257157' fontSize='sm' left='4' pos='absolute' top='20'>
-            servicios;
-          </Text>
-        </Hide>
+        <ServicesTitle w={{ base: 48, md: 56, lg: 64, xl: 72 }} />
 
-        <Flex
-          alignItems={{ lg: 'center' }}
-          gap={{ base: '8', xl: '32' }}
-          justify={{ lg: 'center' }}
+        <Text fontSize='xl' color='black' textAlign={{ base: 'center' }}>
+          Creemos fielmente en nuestra misión, diseñar productos y crear
+          experiencias
+          <Hide below='lg'>
+            <br />
+          </Hide>
+          que permitan a tu negocio estar en el siguiente nivel
+        </Text>
+
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3 }}
+          gap={{ base: 10, lg: 20 }}
+          mt={8}
+          w='full'
         >
-          {info.map((item, index) => (
-            <Flex
-              align='center'
-              border={`2px solid ${item.color}`}
-              borderRadius='3xl'
-              className='embla__slide'
-              flexDir='column'
-              gap='4'
-              key={`services-${index}`}
-              maxW='80'
-              mr={index === info.length - 1 && '2'}
-              px='8'
-              pt='8'
-              pb='20'
-              pos='relative'
-              w='80'
-            >
-              <Flex
-                align='center'
-                bg={item.color}
-                borderRadius='full'
-                h='16'
-                justify='center'
-                pos='absolute'
-                right='-4'
-                top='-4'
-                w='16'
-              >
-                <Text
-                  align='center'
-                  color='white'
-                  fontSize='7xl'
-                  lineHeight='10'
-                >
-                  =
-                </Text>
-              </Flex>
-              <Box
-                bg='rgba(37, 113, 87, 0.5)'
-                borderRadius='full'
-                h='2'
-                w='16'
-              />
-              <Flex flexDir='column' gap='6' pt='12' pb='4'>
-                {item.links.map((service, index) => (
-                  <Flex
-                    flexDir='column'
-                    gap='3'
-                    key={`service-${index}`}
-                    w='full'
-                  >
-                    <Text as='h3' fontWeight='bold'>
-                      {service}
-                    </Text>
-                    <Divider borderColor='rgba(0,0,0,0.2)' w='12' />
-                  </Flex>
-                ))}
-              </Flex>
-              <Box
-                bg='rgba(37, 113, 87, 0.4)'
-                borderRadius='full'
-                h='5'
-                w='48'
-              />
-              <Box
-                bg='rgba(37, 113, 87, 0.2)'
-                borderRadius='full'
-                h='5'
-                w='48'
-              />
-            </Flex>
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
           ))}
-        </Flex>
-        <Hide above='lg'>
-          <Flex gap='6' justify='center'>
-            {info.map((_, index) => (
-              <Box
-                aria-label={`Ir a la slide ${index + 1}`}
-                as='button'
-                bg={
-                  index === selectedIndex ? '#257157' : 'rgba(37, 113, 87, 0.2)'
-                }
-                borderRadius='full'
-                className='embla__dot'
-                h='4'
-                key={`manifest-dot-${index}}`}
-                onClick={() => scrollTo(index)}
-                px='2'
-                transition='all 0.3s ease'
-                w='4'
-              />
-            ))}
-          </Flex>
-        </Hide>
+        </SimpleGrid>
       </Container>
     </Flex>
   );

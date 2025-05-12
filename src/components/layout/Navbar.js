@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'gatsby';
-
-import { IconMenu } from '@tabler/icons-react';
 
 import {
   Box,
@@ -19,87 +17,149 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
+import { IconMenu } from '@tabler/icons-react';
+
+import Icon from '../../assets/vector/Icon';
 
 const links = [
-  { name: 'Pitahaya', to: '/#pitahaya' },
-  { name: 'Manifiesto', to: '/#manifest' },
-  { name: 'Sobre nosotras', to: '/#about' },
-  { name: 'Servicios', to: '/#services' },
-  { name: 'Clientes', to: '/#clients' },
+  { name: 'conócenos', to: '/#about' },
+  { name: 'servicios', to: '/#services' },
+  { name: 'clientes', to: '/#clients' },
+  { name: 'blog', to: '/#blog' },
 ];
 
+const Links = ({ onClick }) => (
+  <List
+    as={Flex}
+    flexDir={{ base: 'column', lg: 'row' }}
+    gap={{ base: 8, xl: 16 }}
+  >
+    {links.map((link, index) => (
+      <ListItem key={`link-${index}`}>
+        <Link
+          aria-label={`Ir a la sección ${link.name}`}
+          onClick={onClick}
+          to={link.to}
+        >
+          <Flex align='center' gap={2}>
+            <Text color='black' fontWeight='semibold'>
+              {link.name}
+            </Text>
+          </Flex>
+        </Link>
+      </ListItem>
+    ))}
+  </List>
+);
+
 const Navbar = () => {
+  const circleRef = useRef(null);
+  const lastScroll = useRef(typeof window !== 'undefined' ? window.scrollY : 0);
+  const [rotation, setRotation] = useState(0);
+  const [scale, setScale] = useState(1);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const Links = () => {
-    return (
-      <List as={Flex} flexDir={{ base: 'column', lg: 'row' }} gap='8'>
-        {links.map((link, index) => (
-          <ListItem key={`link-${index}`}>
-            <Link
-              aria-label={`Ir la la sección ${link.name}`}
-              onClick={onClose}
-              to={link.to}
-            >
-              <Flex align='center' gap='2'>
-                <Text color='#257157' fontFamily='Spinwerad' fontSize='3xl'>
-                  0{index + 1}
-                </Text>
-                <Text>{link.name}</Text>
-              </Flex>
-            </Link>
-          </ListItem>
-        ))}
-      </List>
-    );
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      const direction = currentScroll > lastScroll.current ? 1 : -1;
+      lastScroll.current = currentScroll;
+
+      if (currentScroll <= 0) {
+        setRotation(0);
+        setScale(1);
+      } else {
+        setRotation((prev) => prev + direction * 4);
+        setScale(0.75);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <Box
       as='nav'
-      backdropFilter='blur(0.5rem)'
-      boxShadow='1px 1px 10px 0 rgba(0, 0, 0, 0.05)'
+      bg='white'
+      boxShadow='1px 1px 10px rgba(0, 0, 0, 0.05)'
       position='fixed'
-      py='2'
+      py={4}
       w='full'
-      zIndex='1'
+      zIndex={3}
     >
-      <Container
-        align='center'
-        as={Flex}
-        justify='space-between'
-        maxW={{ lg: 'container.lg', xl: 'container.xl', '2xl': '8xl' }}
-        w='full'
-      >
-        <Link to='/'>
-          <Text color='#257157' fontFamily='Spinwerad' fontSize='5xl' mt='-4'>
-            p;
-          </Text>
-        </Link>
+      <Container maxW='8xl' position='relative' px={0}>
+        <Icon
+          pos='absolute'
+          top={{ md: 4 }}
+          left={{ base: 4, md: 8 }}
+          ref={circleRef}
+          w={{ base: 20, md: 28, xl: 40 }}
+          transform={`rotate(${rotation}deg) scale(${scale})`}
+          transformOrigin='center'
+          transition='transform 0.25s ease-out'
+        />
 
-        <Hide below='lg'>
-          <Links />
-        </Hide>
+        <Container
+          as={Flex}
+          align='center'
+          justify={{ base: 'space-between', lg: 'space-evenly' }}
+          maxW={{ lg: 'container.md', xl: 'container.lg' }}
+          w='full'
+        >
+          <Hide above='lg'>
+            <IconButton bg='transparent' pointerEvents='none' />
+          </Hide>
 
-        <Hide above='lg'>
-          <IconButton
-            bg='#257157'
-            icon={<IconMenu color='white' />}
-            isRound
-            aria-label='Abrir menú de navegación'
-            onClick={onOpen}
-          />
-        </Hide>
+          <Link to='/'>
+            <Text
+              fontFamily='Spinwerad'
+              fontSize={{ base: '2xl', md: '3xl' }}
+              color='#257157'
+            >
+              pitahaya;
+            </Text>
+          </Link>
 
-        <Drawer onClose={onClose} isOpen={isOpen} size='xs'>
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerBody py='16'>
-              <Links />
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
+          <Hide below='lg'>
+            <Links />
+          </Hide>
+
+          <Hide below='lg'>
+            <Text
+              as='a'
+              href='https://calendar.app.google/y3Mpi2emzFNh24119'
+              target='_blank'
+              rel='noopener noreferrer nofollow'
+              fontWeight='semibold'
+              color='#F590A2'
+              textDecoration='underline'
+              aria-label='Agendar una cita'
+            >
+              agendar
+            </Text>
+          </Hide>
+
+          <Hide above='lg'>
+            <IconButton
+              bg='white'
+              icon={<IconMenu color='#F590A2' />}
+              isRound
+              aria-label='Abrir menú de navegación'
+              onClick={onOpen}
+            />
+          </Hide>
+
+          <Drawer onClose={onClose} isOpen={isOpen} size='xs'>
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerBody py={16}>
+                <Links onClick={onClose} />
+              </DrawerBody>
+            </DrawerContent>
+          </Drawer>
+        </Container>
       </Container>
     </Box>
   );
