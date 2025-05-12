@@ -7,6 +7,7 @@ import {
   Button,
   Container,
   Flex,
+  Hide,
   keyframes,
   SimpleGrid,
   Text,
@@ -66,7 +67,10 @@ const Pitahaya = () => {
               <br /> tu sitio web
             </Text>
             <Text fontSize='xl'>
-              Diseñamos y mejoramos la presencia digital <br />
+              Diseñamos y mejoramos la presencia digital{' '}
+              <Hide below='sm'>
+                <br />
+              </Hide>
               de tu negocio con un desarrollo personalizado
             </Text>
             <Button

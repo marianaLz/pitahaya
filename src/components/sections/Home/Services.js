@@ -87,11 +87,11 @@ const Services = () => {
         maxW={{ base: 'lg', lg: 'container.lg' }}
         w='full'
       >
-        <ServicesTitle w={{ base: 48, md: 56, lg: 64, xl: 72 }} />
+        <ServicesTitle w={{ base: 56, lg: 72 }} />
 
         <Text fontSize='xl' color='black' textAlign={{ base: 'center' }}>
           Creemos fielmente en nuestra misión, diseñar productos y crear
-          experiencias
+          experiencias{' '}
           <Hide below='lg'>
             <br />
           </Hide>

@@ -45,7 +45,7 @@ const About = () => {
           gap={6}
           pr={{ lg: 16, xl: 14, '2xl': 0 }}
         >
-          <AboutTitle w={{ base: 48, md: 56, lg: 64, xl: 72 }} />
+          <AboutTitle w={{ base: 56, lg: 72 }} />
 
           <Text color='black' fontSize='xl'>
             Un equipo de mujeres mexicanas en la industria de la tecnología,

@@ -39,7 +39,7 @@ const Clients = () => {
         maxW={{ base: 'lg', lg: 'container.lg', xl: 'container.xl' }}
         w='full'
       >
-        <ClientsTitle w={{ base: 40, md: 48, lg: 56, xl: 64 }} />
+        <ClientsTitle w={{ base: '13rem', lg: '17rem' }} />
 
         <Flex
           wrap='wrap'

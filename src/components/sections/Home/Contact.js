@@ -28,7 +28,7 @@ const Contact = () => {
         maxW={{ base: 'lg', lg: 'container.lg' }}
         w='full'
       >
-        <ContactTitle w={{ base: 56, md: 64, lg: 72, xl: 80 }} />
+        <ContactTitle w={{ base: 60, lg: '19rem' }} />
 
         <Flex
           action='/'

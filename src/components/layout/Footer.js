@@ -47,13 +47,13 @@ const Footer = () => {
           <Flex
             align={{ base: 'center', lg: 'flex-start' }}
             flexDir='column'
-            gap='12'
+            gap={{ base: 8, lg: 12 }}
             maxW='80'
           >
             <Text color='#FF889F' fontFamily='Spinwerad' fontSize='3xl'>
               pitahaya
             </Text>
-            <Text color='white' fontSize={{ base: 'xl', lg: 'sm' }}>
+            <Text color='white'>
               Con una oficina virtual flexible, estamos preparadas para
               colaborar contigo en cualquier rincón del mundo.
             </Text>
@@ -81,9 +81,9 @@ const Footer = () => {
 
           <Office
             mb='-8'
-            mt={{ base: '24', lg: '8' }}
+            mt={{ base: 16, lg: 8 }}
             px='4'
-            w={{ base: 'full', md: '96' }}
+            w={{ base: 'full', md: 96 }}
           />
         </Flex>
 
@@ -91,7 +91,7 @@ const Footer = () => {
 
         <Text align='center' fontSize={{ base: 'sm', lg: 'xs' }}>
           Un equipo de mujeres mexicanas en la industria de la tecnología, una
-          dupla con la filosofía de ser participes en proyectos que tengan un
+          dupla con la filosofía de ser partícipes en proyectos que tengan un
           impacto positivo en la era digital.
         </Text>
       </Container>
