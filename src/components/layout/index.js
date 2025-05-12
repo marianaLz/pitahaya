@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
         right={4}
         size={{ base: 'md', md: 'lg' }}
         color='#F3E3CB'
-        bg='#267157'
+        bg='#007355'
         borderRadius='full'
         leftIcon={<IconBrandWhatsapp />}
         transition='transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease'

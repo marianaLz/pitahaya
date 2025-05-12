@@ -119,7 +119,7 @@ const Navbar = () => {
             <Text
               fontFamily='Spinwerad'
               fontSize={{ base: '2xl', md: '3xl' }}
-              color='#257157'
+              color='#007355'
             >
               pitahaya;
             </Text>

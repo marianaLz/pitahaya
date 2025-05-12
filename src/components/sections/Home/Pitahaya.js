@@ -19,7 +19,7 @@ const scroll = keyframes`
 `;
 
 const SCROLL_TEXT =
-  'ESTÁ ES LA SEÑAL QUE ESTABAS ESPERANDO, COMIENZA CON UN CLIC.';
+  'ESTA ES LA SEÑAL QUE ESTABAS ESPERANDO, COMIENZA CON UN CLIC.';
 
 const Pitahaya = () => {
   const { image } = useStaticQuery(graphql`

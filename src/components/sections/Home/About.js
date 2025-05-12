@@ -24,7 +24,7 @@ const aboutItems = [
 
 const About = () => {
   return (
-    <Flex as='section' bg='rgba(184, 221, 187, 0.2)' id='about'>
+    <Flex as='section' bg='#F1F8F1' id='about'>
       <Container
         as={SimpleGrid}
         columns={{ base: 1, lg: 2 }}
