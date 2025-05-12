@@ -31,16 +31,17 @@ const Contact = () => {
         <ContactTitle w={{ base: 56, md: 64, lg: 72, xl: 80 }} />
 
         <Flex
+          align='center'
           as='form'
-          name='contact'
-          method='POST'
           data-netlify='true'
           flexDir='column'
           gap={16}
+          method='POST'
+          name='contact'
           w='full'
         >
-          <input type='hidden' name='form-name' value='contact' />
-          <input type='hidden' name='redirect' value='/' />
+          <input type='hidden' name='_next' value='https://pitahaya.studio/' />
+          <input type='hidden' name='_captcha' value='false' />
 
           <Grid
             templateColumns={{
