@@ -31,7 +31,7 @@ const Contact = () => {
         <ContactTitle w={{ base: 56, md: 64, lg: 72, xl: 80 }} />
 
         <Flex
-          action='/pages/success'
+          action='/'
           align='center'
           as='form'
           data-netlify='true'
