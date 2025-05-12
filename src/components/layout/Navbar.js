@@ -20,6 +20,7 @@ import {
 import { IconMenu } from '@tabler/icons-react';
 
 import Icon from '../../assets/vector/Icon';
+import Logo from '../../assets/vector/Logo';
 
 const links = [
   { name: 'conócenos', to: '/#about' },
@@ -116,13 +117,7 @@ const Navbar = () => {
           </Hide>
 
           <Link to='/'>
-            <Text
-              fontFamily='Spinwerad'
-              fontSize={{ base: '2xl', md: '3xl' }}
-              color='#007355'
-            >
-              pitahaya;
-            </Text>
+            <Logo color='#007355' w={{ base: 28, md: 36 }} />
           </Link>
 
           <Hide below='lg'>

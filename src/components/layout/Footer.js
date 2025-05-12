@@ -15,6 +15,7 @@ import {
 } from '@tabler/icons-react';
 
 import Office from '../../assets/vector/Office';
+import Logo from '../../assets/vector/Logo';
 
 const Footer = () => {
   return (
@@ -50,9 +51,8 @@ const Footer = () => {
             gap={{ base: 8, lg: 12 }}
             maxW='80'
           >
-            <Text color='#FF889F' fontFamily='Spinwerad' fontSize='3xl'>
-              pitahaya
-            </Text>
+            <Logo color='#FF889F' w={40} />
+
             <Text color='white'>
               Con una oficina virtual flexible, estamos preparadas para
               colaborar contigo en cualquier rincón del mundo.
