@@ -56,7 +56,6 @@ const Pitahaya = () => {
             textAlign={{ base: 'center', lg: 'left' }}
           >
             <Text
-              as='h1'
               fontSize={{ base: '3xl', lg: '5xl' }}
               fontWeight='semibold'
               lineHeight={{ base: '1.15', lg: '1' }}
@@ -66,7 +65,7 @@ const Pitahaya = () => {
               desarrollo de
               <br /> tu sitio web
             </Text>
-            <Text fontSize='xl'>
+            <Text as='h1' fontSize='xl'>
               Diseñamos y mejoramos la presencia digital{' '}
               <Hide below='sm'>
                 <br />

@@ -67,11 +67,13 @@ const ServiceCard = ({ icon, name, description }) => (
   >
     <Flex align='center' gap={4}>
       {icon}
-      <Text flex={1} fontSize='xl' fontWeight='semibold' color='black'>
+      <Text as='h2' flex={1} fontSize='xl' fontWeight='semibold' color='black'>
         {name}
       </Text>
     </Flex>
-    <Text fontSize='sm'>{description}</Text>
+    <Text as='h3' fontSize='sm'>
+      {description}
+    </Text>
   </Flex>
 );
 

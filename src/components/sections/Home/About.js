@@ -58,7 +58,7 @@ const About = () => {
             {aboutItems.map((item, idx) => (
               <ListItem key={idx} as={Flex} gap={2}>
                 <ListIcon as={Check} />
-                <Text flex={1} mt='-1'>
+                <Text as='h2' flex={1} mt='-1'>
                   {item}
                 </Text>
               </ListItem>

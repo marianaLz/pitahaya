@@ -33,7 +33,7 @@ export const Head = () => (
     <title>Pitahaya Studio | Laboratorio de creación de páginas web</title>
     <meta
       name='description'
-      content='Un equipo de mujeres mexicanas en la industria de la tecnología, (Software engineer + Product designer), una dupla con la filosofía de ser participes en proyectos que tengan un impacto positivo en la era digital.'
+      content='Un equipo de mujeres mexicanas en la industria de la tecnología, una dupla con la filosofía de ser partícipes en proyectos que tengan un impacto positivo en la era digital.'
     />
     <meta name='robots' content='INDEX,FOLLOW' />
     <link rel='canonical' href='https://pitahaya.studio' />
@@ -47,7 +47,7 @@ export const Head = () => (
     />
     <meta
       property='og:description'
-      content='Un equipo de mujeres mexicanas en la industria de la tecnología, (Software engineer + Product designer), una dupla con la filosofía de ser participes en proyectos que tengan un impacto positivo en la era digital.'
+      content='Un equipo de mujeres mexicanas en la industria de la tecnología, una dupla con la filosofía de ser partícipes en proyectos que tengan un impacto positivo en la era digital.'
     />
     <meta property='og:type' content='website' />
     <meta property='og:url' content='https://pitahaya.studio' />
@@ -65,7 +65,7 @@ export const Head = () => (
     <meta property='twitter:title' content='Pitahaya Studio' />
     <meta
       property='twitter:description'
-      content='Un equipo de mujeres mexicanas en la industria de la tecnología, (Software engineer + Product designer), una dupla con la filosofía de ser participes en proyectos que tengan un impacto positivo en la era digital.'
+      content='Un equipo de mujeres mexicanas en la industria de la tecnología, una dupla con la filosofía de ser partícipes en proyectos que tengan un impacto positivo en la era digital.'
     />
   </React.Fragment>
 );
