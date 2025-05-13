@@ -59,21 +59,36 @@ const Footer = () => {
             </Text>
             <Flex gap='8'>
               <IconButton
+                aria-label='Facebook'
+                as='a'
+                bg='#007355'
+                href='https://www.facebook.com/profile.php?id=61550735810948'
                 icon={<IconBrandFacebook color='#F3E3CB' />}
-                bg='#007355'
                 isRound
+                rel='noopener noreferrer nofollow'
+                target='_blank'
                 _hover={{ bg: '#007355' }}
               />
               <IconButton
+                aria-label='Instagram'
+                as='a'
+                bg='#007355'
+                href='https://www.instagram.com/pitahaya.web/'
                 icon={<IconBrandInstagram color='#F3E3CB' />}
-                bg='#007355'
                 isRound
+                rel='noopener noreferrer nofollow'
+                target='_blank'
                 _hover={{ bg: '#007355' }}
               />
               <IconButton
-                icon={<IconBrandLinkedin color='#F3E3CB' />}
+                aria-label='LinkedIn'
+                as='a'
                 bg='#007355'
+                href='https://www.linkedin.com/company/pitahayastudio/'
+                icon={<IconBrandLinkedin color='#F3E3CB' />}
                 isRound
+                rel='noopener noreferrer nofollow'
+                target='_blank'
                 _hover={{ bg: '#007355' }}
               />
             </Flex>

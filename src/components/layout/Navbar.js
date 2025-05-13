@@ -26,7 +26,7 @@ const links = [
   { name: 'conócenos', to: '/#about' },
   { name: 'servicios', to: '/#services' },
   { name: 'clientes', to: '/#clients' },
-  { name: 'blog', to: '/#blog' },
+  { name: 'blog', to: 'https://medium.com/@hello.pitahaya.studio' },
 ];
 
 const Links = ({ onClick }) => (
@@ -36,18 +36,27 @@ const Links = ({ onClick }) => (
     gap={{ base: 8, xl: 16 }}
   >
     {links.map((link, index) => (
-      <ListItem key={`link-${index}`}>
-        <Link
-          aria-label={`Ir a la sección ${link.name}`}
-          onClick={onClick}
-          to={link.to}
-        >
-          <Flex align='center' gap={2}>
-            <Text color='black' fontWeight='semibold'>
-              {link.name}
-            </Text>
-          </Flex>
-        </Link>
+      <ListItem color='black' fontWeight='semibold' key={`link-${index}`}>
+        {link.to.startsWith('http') ? (
+          <Text
+            aria-label={link.name}
+            as='a'
+            fontWeight='semibold'
+            href={link.to}
+            target='_blank'
+            rel='noopener noreferrer nofollow'
+          >
+            {link.name}
+          </Text>
+        ) : (
+          <Link
+            aria-label={`Ir a  ${link.name}`}
+            onClick={onClick}
+            to={link.to}
+          >
+            {link.name}
+          </Link>
+        )}
       </ListItem>
     ))}
   </List>
