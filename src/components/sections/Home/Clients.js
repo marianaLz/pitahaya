@@ -1,33 +1,42 @@
 import React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { graphql, useStaticQuery } from 'gatsby';
 
-import { Container, Flex } from '@chakra-ui/react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 
 import ClientsTitle from '../../../assets/vector/ClientsTitle';
 
-const Clients = () => {
-  const { gallery } = useStaticQuery(graphql`
-    query {
-      gallery: allFile(
-        filter: {
-          extension: { eq: "png" }
-          absolutePath: { regex: "/images/home/" }
-        }
-      ) {
-        nodes {
-          childImageSharp {
-            gatsbyImageData(
-              height: 64
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-    }
-  `);
+import Idmah from '../../../assets/vector/Idmah';
+import Openn from '../../../assets/vector/Openn';
+import Plib from '../../../assets/vector/Plib';
+import Bonnus from '../../../assets/vector/Bonnus';
+import Konfio from '../../../assets/vector/Konfio';
+import Bahia from '../../../assets/vector/Bahia';
+import Laboratoria from '../../../assets/vector/Laboratoria';
+import CortosLargos from '../../../assets/vector/CortosLargos';
+import Natoure from '../../../assets/vector/Natoure';
+import Mayakaan from '../../../assets/vector/Mayakaan';
+import Liave from '../../../assets/vector/Liave';
+import Kuxatur from '../../../assets/vector/Kuxatur';
+import Gaia from '../../../assets/vector/Gaia';
+import Intobarre from '../../../assets/vector/Intobarre';
+import Sleep from '../../../assets/vector/Sleep';
+import Smatch from '../../../assets/vector/Smatch';
+import Eli from '../../../assets/vector/Eli';
+import Enio from '../../../assets/vector/Enio';
+import Safs from '../../../assets/vector/Safs';
+import Loor from '../../../assets/vector/Loor';
+import Corregidora from '../../../assets/vector/Corregidora';
+import Sacii from '../../../assets/vector/Sacii';
 
+const gallery = [
+  [<Idmah />, <Openn />, <Plib />, <Bonnus />],
+  [<Konfio />, <Bahia />, <Laboratoria />, <CortosLargos />],
+  [<Natoure />, <Mayakaan />, <Liave />, <Kuxatur />],
+  [<Gaia />, <Intobarre />, <Sleep />, <Smatch />],
+  [<Eli />, <Enio />, <Safs />, <Loor />],
+  [<Corregidora />, <Sacii />],
+];
+
+const Clients = () => {
   return (
     <Flex as='section' bg='white' id='clients'>
       <Container
@@ -36,32 +45,27 @@ const Clients = () => {
         align='center'
         gap={16}
         py={{ base: 16, lg: 32 }}
-        maxW={{ base: 'lg', lg: 'container.lg', xl: 'container.xl' }}
+        maxW={{ base: 'lg', lg: 'container.lg' }}
         w='full'
       >
         <ClientsTitle w={{ base: '13rem', lg: '17rem' }} />
 
-        <Flex
-          wrap='wrap'
-          gap={{ base: 12, md: 16 }}
-          justify='center'
-          align='center'
-        >
-          {gallery.nodes.map((image, index) => (
-            <Flex
-              key={`client-${index}`}
+        <Flex wrap='wrap' gap='12' justify='center' align='center' w='full'>
+          {gallery.map((row, index) => (
+            <Box
               align='center'
+              display={{ base: 'grid', lg: 'flex' }}
+              gap={{ base: 12, md: 16, xl: 24 }}
+              gridTemplateColumns='repeat(2, 1fr)'
               justify='center'
-              maxH={{ base: 10, md: 16 }}
-              maxW={{ base: 32, md: 40 }}
+              key={`client-row-${index}`}
             >
-              <GatsbyImage
-                image={getImage(image)}
-                alt={`Cliente ${index + 1}`}
-                objectFit='contain'
-                loading='lazy'
-              />
-            </Flex>
+              {row.map((client, index) => (
+                <Flex align='center' justify='center' key={`client-${index}`}>
+                  {client}
+                </Flex>
+              ))}
+            </Box>
           ))}
         </Flex>
       </Container>
