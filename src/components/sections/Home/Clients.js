@@ -25,6 +25,7 @@ import Enio from '../../../assets/vector/Enio';
 import Safs from '../../../assets/vector/Safs';
 import Loor from '../../../assets/vector/Loor';
 import Corregidora from '../../../assets/vector/Corregidora';
+import Piramides from '../../../assets/vector/Piramides';
 import Sacii from '../../../assets/vector/Sacii';
 
 const gallery = [
@@ -33,7 +34,7 @@ const gallery = [
   [<Natoure />, <Mayakaan />, <Liave />, <Kuxatur />],
   [<Gaia />, <Intobarre />, <Sleep />, <Smatch />],
   [<Eli />, <Enio />, <Safs />, <Loor />],
-  [<Corregidora />, <Sacii />],
+  [<Corregidora />, <Piramides />, <Sacii />],
 ];
 
 const Clients = () => {
@@ -55,7 +56,7 @@ const Clients = () => {
             <Box
               align='center'
               display={{ base: 'grid', lg: 'flex' }}
-              gap={{ base: 12, md: 16, xl: 24 }}
+              gap={{ base: 10, md: 16, xl: 24 }}
               gridTemplateColumns='repeat(2, 1fr)'
               justify='center'
               key={`client-row-${index}`}

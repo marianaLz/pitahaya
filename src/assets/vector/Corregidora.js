@@ -5,8 +5,8 @@ import { Box } from '@chakra-ui/react';
 const Corregidora = () => {
   return (
     <Box
-      width={{ base: '158px', md: '270px' }}
-      height={{ base: '42px', md: '74px' }}
+      width={{ base: '176px', md: '270px' }}
+      height={{ base: '48px', md: '74px' }}
     >
       <svg
         width='100%'
@@ -768,28 +768,27 @@ const Corregidora = () => {
               transform='scale(0.00729927 0.0126582)'
             />
           </pattern>
-          <pattern
+          <linearGradient
             id='pattern2_863_1256'
-            patternContentUnits='objectBoundingBox'
-            width='1'
-            height='1'
+            x1='0%'
+            y1='0%'
+            x2='100%'
+            y2='0%'
           >
-            <use
-              xlinkHref='#image2_863_1256'
-              transform='scale(0.00234742 0.0042735)'
-            />
-          </pattern>
-          <pattern
+            <stop offset='0%' stop-color='#F13CB1' />
+            <stop offset='100%' stop-color='#8DD7E4' />
+          </linearGradient>
+
+          <linearGradient
             id='pattern3_863_1256'
-            patternContentUnits='objectBoundingBox'
-            width='1'
-            height='1'
+            x1='0%'
+            y1='0%'
+            x2='100%'
+            y2='0%'
           >
-            <use
-              xlinkHref='#image3_863_1256'
-              transform='scale(0.00199601 0.0042735)'
-            />
-          </pattern>
+            <stop offset='0%' stop-color='#60C068' />
+            <stop offset='100%' stop-color='#18248D' />
+          </linearGradient>
 
           <image
             id='image0_863_1256'
