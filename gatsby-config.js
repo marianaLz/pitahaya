@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: 'pitahaya',
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://pitahaya.studio/',
   },
   plugins: [
     {

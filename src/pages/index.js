@@ -49,11 +49,8 @@ export const Head = () => (
     />
     <meta property='og:type' content='website' />
     <meta property='og:url' content='https://pitahaya.studio' />
-    <meta property='og:image' content='https://i.imgur.com/0NtE0D7.png' />
-    <meta
-      property='og:image:secure_url'
-      content='https://i.imgur.com/0NtE0D7.png'
-    />
+    <meta property='og:image' content='/pitahaya-studio.jpg' />
+    <meta property='og:image:secure_url' content='/pitahaya-studio.jpg' />
     <meta property='og:image:type' content='image/jpeg' />
     <meta property='og:image:width' content='1200' />
     <meta property='og:image:height' content='627' />
