@@ -22,7 +22,6 @@ import Sleep from '../../../assets/vector/Sleep';
 import Smatch from '../../../assets/vector/Smatch';
 import Eli from '../../../assets/vector/Eli';
 import Enio from '../../../assets/vector/Enio';
-import Safs from '../../../assets/vector/Safs';
 import Loor from '../../../assets/vector/Loor';
 import Corregidora from '../../../assets/vector/Corregidora';
 import Piramides from '../../../assets/vector/Piramides';
@@ -33,8 +32,8 @@ const gallery = [
   [<Konfio />, <Bahia />, <Laboratoria />, <CortosLargos />],
   [<Natoure />, <Mayakaan />, <Liave />, <Kuxatur />],
   [<Gaia />, <Intobarre />, <Sleep />, <Smatch />],
-  [<Eli />, <Enio />, <Safs />, <Loor />],
-  [<Corregidora />, <Piramides />, <Sacii />],
+  [<Eli />, <Enio />, <Sacii />, <Loor />],
+  [<Corregidora />, <Piramides />],
 ];
 
 const Clients = () => {
