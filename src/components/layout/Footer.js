@@ -73,7 +73,7 @@ const Footer = () => {
                 aria-label='Instagram'
                 as='a'
                 bg='#007355'
-                href='https://www.instagram.com/pitahaya.web/'
+                href='https://www.instagram.com/pitahaya__studio/'
                 icon={<IconBrandInstagram color='#F3E3CB' />}
                 isRound
                 rel='noopener noreferrer nofollow'
