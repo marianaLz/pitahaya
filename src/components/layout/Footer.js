@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Box,
@@ -7,107 +7,113 @@ import {
   Flex,
   IconButton,
   Text,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
   IconBrandLinkedin,
-} from '@tabler/icons-react';
+} from "@tabler/icons-react";
 
-import Office from '../../assets/vector/Office';
-import Logo from '../../assets/vector/Logo';
+import Office from "../../assets/vector/Office";
+import Logo from "../../assets/vector/Logo";
 
 const Footer = () => {
   return (
     <Box
-      as='footer'
-      bg='black'
-      boxShadow='1px 1px 10px 0 rgba(0, 0, 0, 0.05)'
-      color='white'
-      textAlign={{ base: 'center', lg: 'left' }}
+      as="footer"
+      bg="var(--color-black)"
+      boxShadow="1px 1px 10px 0 var(--color-shadow-light)"
+      color="var(--color-white)"
+      textAlign={{ base: "center", lg: "left" }}
     >
       <Container
         as={Flex}
-        flexDir='column'
-        gap='8'
-        justify='space-between'
+        flexDir="column"
+        gap="8"
+        justify="space-between"
         maxW={{
-          base: 'lg',
-          lg: 'container.lg',
-          xl: 'container.xl',
+          base: "lg",
+          lg: "container.lg",
+          xl: "container.xl",
         }}
-        py='16'
-        w='full'
+        py="16"
+        w="full"
       >
         <Flex
-          align={{ base: 'center', lg: 'flex-start' }}
-          flexDir={{ base: 'column', lg: 'row' }}
-          justify='space-between'
-          w='full'
+          align={{ base: "center", lg: "flex-start" }}
+          flexDir={{ base: "column", lg: "row" }}
+          justify="space-between"
+          w="full"
         >
           <Flex
-            align={{ base: 'center', lg: 'flex-start' }}
-            flexDir='column'
+            align={{ base: "center", lg: "flex-start" }}
+            flexDir="column"
             gap={{ base: 8, lg: 12 }}
-            maxW='80'
+            maxW="80"
           >
-            <Logo color='#FF889F' w={40} />
+            <Logo color="var(--color-brand-accent)" w={40} />
 
-            <Text color='white'>
+            <Text color="var(--color-white)">
               Con una oficina virtual flexible, estamos preparadas para
               colaborar contigo en cualquier rincón del mundo.
             </Text>
-            <Flex gap='8'>
+            <Flex gap="8">
               <IconButton
-                aria-label='Facebook'
-                as='a'
-                bg='#007355'
-                href='https://www.facebook.com/profile.php?id=61550735810948'
-                icon={<IconBrandFacebook color='#F3E3CB' />}
+                aria-label="Facebook"
+                as="a"
+                bg="var(--color-brand-primary)"
+                href="https://www.facebook.com/profile.php?id=61550735810948"
+                icon={
+                  <IconBrandFacebook color="var(--color-text-on-primary)" />
+                }
                 isRound
-                rel='noopener noreferrer nofollow'
-                target='_blank'
-                _hover={{ bg: '#007355' }}
+                rel="noopener noreferrer nofollow"
+                target="_blank"
+                _hover={{ bg: "var(--color-brand-primary)" }}
               />
               <IconButton
-                aria-label='Instagram'
-                as='a'
-                bg='#007355'
-                href='https://www.instagram.com/pitahaya__studio/'
-                icon={<IconBrandInstagram color='#F3E3CB' />}
+                aria-label="Instagram"
+                as="a"
+                bg="var(--color-brand-primary)"
+                href="https://www.instagram.com/pitahaya__studio/"
+                icon={
+                  <IconBrandInstagram color="var(--color-text-on-primary)" />
+                }
                 isRound
-                rel='noopener noreferrer nofollow'
-                target='_blank'
-                _hover={{ bg: '#007355' }}
+                rel="noopener noreferrer nofollow"
+                target="_blank"
+                _hover={{ bg: "var(--color-brand-primary)" }}
               />
               <IconButton
-                aria-label='LinkedIn'
-                as='a'
-                bg='#007355'
-                href='https://www.linkedin.com/company/pitahayastudio/'
-                icon={<IconBrandLinkedin color='#F3E3CB' />}
+                aria-label="LinkedIn"
+                as="a"
+                bg="var(--color-brand-primary)"
+                href="https://www.linkedin.com/company/pitahayastudio/"
+                icon={
+                  <IconBrandLinkedin color="var(--color-text-on-primary)" />
+                }
                 isRound
-                rel='noopener noreferrer nofollow'
-                target='_blank'
-                _hover={{ bg: '#007355' }}
+                rel="noopener noreferrer nofollow"
+                target="_blank"
+                _hover={{ bg: "var(--color-brand-primary)" }}
               />
             </Flex>
           </Flex>
 
           <Office
-            mb='-8'
+            mb="-8"
             mt={{ base: 16, lg: 8 }}
-            px='4'
-            w={{ base: 'full', md: 96 }}
+            px="4"
+            w={{ base: "full", md: 96 }}
           />
         </Flex>
 
-        <Divider borderColor='#FF889F' />
+        <Divider borderColor="var(--color-brand-accent)" />
 
-        <Text align='center' fontSize={{ base: 'sm', lg: 'xs' }}>
-          Un equipo de mujeres mexicanas en la industria de la tecnología, una
-          dupla con la filosofía de ser partícipes en proyectos que tengan un
-          impacto positivo en la era digital.
+        <Text align="center" fontSize={{ base: "sm", lg: "xs" }}>
+          Un equipo de mujeres mexicanas en la industria de la tecnología con la
+          filosofía de ser partícipes en proyectos que tengan un impacto
+          positivo en la era digital.
         </Text>
       </Container>
     </Box>

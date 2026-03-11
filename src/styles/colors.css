@@ -1,0 +1,50 @@
+/**
+ * Variables de color del proyecto Pitahaya Studio.
+ * Usar en CSS: var(--color-nombre)
+ * Usar en Chakra/JS: 'var(--color-nombre)'
+ */
+:root {
+  /* Brand - primarios */
+  --color-brand-primary: #007355;
+  --color-brand-primary-dark: #257157;
+
+  /* Brand - acentos */
+  --color-brand-accent: #FF889F;
+  --color-brand-accent-light: #F590A2;
+
+  /* Sobre fondos oscuros / botones */
+  --color-text-on-primary: #F3E3CB;
+
+  /* Fondos de sección */
+  --color-bg-page: #F8F7F3;
+  --color-bg-section-alt: #F1F8F1;
+  --color-bg-section-gray: #f5f5f5;
+
+  /* Bordes y outline */
+  --color-outline: #B8DDBB;
+
+  /* Texto */
+  --color-text-muted: #666666;
+  --color-text-body: #000000;
+
+  /* Sombras */
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+
+  /* Neutros */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* SVG / ilustraciones */
+  --color-stroke: #262626;
+  --color-illustration-mint: #adddb7;
+  --color-illustration-mint-light: #b9debc;
+  --color-illustration-green: #c1dec0;
+  --color-illustration-dark: #191919;
+  --color-illustration-red: #FF004F;
+  --color-illustration-cream: #f5e1c7;
+  --color-gray-mid: #757575;
+
+  /* Logos externos / partners */
+  --color-external-blue: #3B65F6;
+}

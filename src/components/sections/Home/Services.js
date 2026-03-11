@@ -1,77 +1,83 @@
-import React from 'react';
+import React from "react";
 
-import { Container, Flex, Hide, SimpleGrid, Text } from '@chakra-ui/react';
+import { Container, Flex, Hide, SimpleGrid, Text } from "@chakra-ui/react";
 
-import Banners from '../../../assets/vector/Banners';
-import Branding from '../../../assets/vector/Branding';
-import Ecommerce from '../../../assets/vector/Ecommerce';
-import Illustration from '../../../assets/vector/Illustration';
-import ServicesTitle from '../../../assets/vector/ServicesTitle';
-import Usability from '../../../assets/vector/Usability';
-import Website from '../../../assets/vector/Website';
+import Social from "../../../assets/vector/Social";
+import Branding from "../../../assets/vector/Branding";
+import Ecommerce from "../../../assets/vector/Ecommerce";
+import Paid from "../../../assets/vector/Paid";
+import ServicesTitle from "../../../assets/vector/ServicesTitle";
+import Usability from "../../../assets/vector/Usability";
+import Website from "../../../assets/vector/Website";
 
 const services = [
   {
-    name: 'Ecommerce',
+    name: "Ecommerce",
     icon: <Ecommerce />,
     description:
-      'Aumenta tus ventas en el mercado digital y permite compras seguras para ti y tus clientes.',
+      "Aumenta tus ventas en el mercado digital y permite compras seguras para ti y tus clientes.",
   },
   {
-    name: 'Páginas web',
+    name: "Páginas web",
     icon: <Website />,
     description:
-      'Obtén credibilidad en el mundo digital, esta es una herramienta para estar en contacto con clientes potenciales.',
+      "Obtén credibilidad en el mundo digital, esta es una herramienta para estar en contacto con clientes potenciales.",
   },
   {
-    name: 'UX / UI',
+    name: "UX / UI",
     icon: <Usability />,
     description:
-      'Brinda una experiencia positiva y efectiva en el sitio web de tu empresa.',
+      "Brinda una experiencia positiva y efectiva en el sitio web de tu empresa.",
   },
   {
-    name: 'Branding',
+    name: "Branding",
     icon: <Branding />,
     description:
-      'Construye confianza en los consumidores y establece una identidad sólida y reconocible para ti o tu negocio.',
+      "Construye confianza en los consumidores y establece una identidad sólida y reconocible para ti o tu negocio.",
   },
   {
-    name: 'Ilustración',
-    icon: <Illustration />,
+    name: "Paid media",
+    icon: <Paid />,
     description:
-      'Mejora la estética y comunicación, de esta manera puedes atraer un público específico de manera efectiva.',
+      "Potencia tus objetivos de negocio con campañas digitales estratégicas que conectan tu marca con la audiencia ideal.",
   },
   {
-    name: 'Banners',
-    icon: <Banners />,
+    name: "Social media",
+    icon: <Social />,
     description:
-      'Presenta información compleja de manera visualmente atractiva y fácil de entender.',
+      "Conecta con más personas en línea y muestra tu marca de forma profesional. Una herramienta clave para atraer y comunicarte con clientes potenciales.",
   },
 ];
 
 const ServiceCard = ({ icon, name, description }) => (
   <Flex
-    direction='column'
+    direction="column"
     gap={6}
     px={8}
     py={10}
-    bg='white'
-    border='2px'
-    borderColor='black'
-    borderRadius='xl'
-    transition='all 0.3s ease'
+    bg="var(--color-white)"
+    border="2px"
+    borderColor="var(--color-black)"
+    borderRadius="xl"
+    transition="all 0.3s ease"
     _hover={{
-      transform: 'translateY(-8px)',
-      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+      transform: "translateY(-8px)",
+      boxShadow: "0 4px 30px var(--color-shadow)",
     }}
   >
-    <Flex align='center' gap={4}>
+    <Flex align="center" gap={4}>
       {icon}
-      <Text as='h2' flex={1} fontSize='xl' fontWeight='semibold' color='black'>
+      <Text
+        as="h2"
+        flex={1}
+        fontSize="xl"
+        fontWeight="semibold"
+        color="var(--color-text-body)"
+      >
         {name}
       </Text>
     </Flex>
-    <Text as='h3' fontSize='sm'>
+    <Text as="h3" fontSize="sm">
       {description}
     </Text>
   </Flex>
@@ -79,22 +85,26 @@ const ServiceCard = ({ icon, name, description }) => (
 
 const Services = () => {
   return (
-    <Flex as='section' bg='#f5f5f5' id='services'>
+    <Flex as="section" bg="var(--color-bg-section-alt)" id="services">
       <Container
         as={Flex}
-        direction='column'
-        align='center'
+        direction="column"
+        align="center"
         gap={8}
         py={{ base: 16, lg: 32 }}
-        maxW={{ base: 'lg', lg: 'container.lg' }}
-        w='full'
+        maxW={{ base: "lg", lg: "container.lg" }}
+        w="full"
       >
         <ServicesTitle w={{ base: 56, lg: 72 }} />
 
-        <Text fontSize='xl' color='black' textAlign={{ base: 'center' }}>
+        <Text
+          fontSize="xl"
+          color="var(--color-text-body)"
+          textAlign={{ base: "center" }}
+        >
           Creemos fielmente en nuestra misión, diseñar productos y crear
-          experiencias{' '}
-          <Hide below='lg'>
+          experiencias{" "}
+          <Hide below="lg">
             <br />
           </Hide>
           que permitan a tu negocio estar en el siguiente nivel
@@ -104,7 +114,7 @@ const Services = () => {
           columns={{ base: 1, md: 2, lg: 3 }}
           gap={{ base: 10, lg: 20 }}
           mt={8}
-          w='full'
+          w="full"
         >
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />

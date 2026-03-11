@@ -3,12 +3,16 @@
  */
 module.exports = {
   siteMetadata: {
-    title: 'pitahaya',
-    siteUrl: 'https://pitahaya.studio/',
+    title: "Pitahaya Studio",
+    titleTemplate: "%s",
+    description:
+      "Estudio digital en México especializado en desarrollo de sitios web, ecommerce, branding y diseño UX/UI.",
+    siteUrl: "https://pitahaya.studio/",
+    image: "/pitahaya-studio.jpg",
   },
   plugins: [
     {
-      resolve: '@chakra-ui/gatsby-plugin',
+      resolve: "@chakra-ui/gatsby-plugin",
       options: {
         /**
          * @property {boolean} [resetCSS=true]
@@ -24,27 +28,36 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        icon: 'src/assets/images/icon.png',
-        name: 'Pitahaya Studio',
-        short_name: 'Pitahaya',
-        start_url: '/',
-        background_color: '#257157',
-        theme_color: '#257157',
-        display: 'standalone',
+        icon: "src/assets/images/icon.png",
+        name: "Pitahaya Studio",
+        short_name: "Pitahaya",
+        start_url: "/",
+        background_color: "#257157",
+        theme_color: "#257157",
+        display: "standalone",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
+        name: "images",
         path: `${__dirname}/src/assets/images`,
       },
     },
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-offline',
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-offline",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://pitahaya.studio",
+        sitemap: "https://pitahaya.studio/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 };

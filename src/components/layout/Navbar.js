@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'gatsby';
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "gatsby";
 
 import {
   Box,
@@ -16,35 +16,39 @@ import {
   ListItem,
   Text,
   useDisclosure,
-} from '@chakra-ui/react';
-import { IconMenu } from '@tabler/icons-react';
+} from "@chakra-ui/react";
+import { IconMenu } from "@tabler/icons-react";
 
-import Icon from '../../assets/vector/Icon';
-import Logo from '../../assets/vector/Logo';
+import Icon from "../../assets/vector/Icon";
+import Logo from "../../assets/vector/Logo";
 
 const links = [
-  { name: 'conócenos', to: '/#about' },
-  { name: 'servicios', to: '/#services' },
-  { name: 'clientes', to: '/#clients' },
-  { name: 'blog', to: 'https://medium.com/@hello.pitahaya.studio' },
+  { name: "conócenos", to: "/about" },
+  { name: "servicios", to: "/#services" },
+  { name: "clientes", to: "/#clients" },
+  { name: "blog", to: "https://medium.com/@hello.pitahaya.studio" },
 ];
 
 const Links = ({ onClick }) => (
   <List
     as={Flex}
-    flexDir={{ base: 'column', lg: 'row' }}
+    flexDir={{ base: "column", lg: "row" }}
     gap={{ base: 8, xl: 16 }}
   >
     {links.map((link, index) => (
-      <ListItem color='black' fontWeight='semibold' key={`link-${index}`}>
-        {link.to.startsWith('http') ? (
+      <ListItem
+        color="var(--color-text-body)"
+        fontWeight="semibold"
+        key={`link-${index}`}
+      >
+        {link.to.startsWith("http") ? (
           <Text
             aria-label={link.name}
-            as='a'
-            fontWeight='semibold'
+            as="a"
+            fontWeight="semibold"
             href={link.to}
-            target='_blank'
-            rel='noopener noreferrer nofollow'
+            target="_blank"
+            rel="noopener noreferrer nofollow"
           >
             {link.name}
           </Text>
@@ -70,7 +74,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
     lastScroll.current = window.scrollY;
 
@@ -88,77 +92,77 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <Box
-      as='nav'
-      bg='white'
-      boxShadow='1px 1px 10px rgba(0, 0, 0, 0.05)'
-      position='fixed'
+      as="nav"
+      bg="var(--color-white)"
+      boxShadow="1px 1px 10px var(--color-shadow-light)"
+      position="fixed"
       py={4}
-      w='full'
+      w="full"
       zIndex={3}
     >
-      <Container maxW='8xl' position='relative' px={0}>
+      <Container maxW="8xl" position="relative" px={0}>
         <Icon
-          pos='absolute'
+          pos="absolute"
           top={{ md: 4 }}
           left={{ base: 4, md: 8 }}
           ref={circleRef}
           w={{ base: 20, md: 28, xl: 40 }}
           transform={`rotate(${rotation}deg) scale(${scale})`}
-          transformOrigin='center'
-          transition='transform 0.25s ease-out'
+          transformOrigin="center"
+          transition="transform 0.25s ease-out"
         />
 
         <Container
           as={Flex}
-          align='center'
-          justify={{ base: 'space-between', lg: 'space-evenly' }}
-          maxW={{ lg: 'container.md', xl: 'container.lg' }}
-          w='full'
+          align="center"
+          justify={{ base: "space-between", lg: "space-evenly" }}
+          maxW={{ lg: "container.md", xl: "container.lg" }}
+          w="full"
         >
-          <Hide above='lg'>
-            <IconButton bg='transparent' pointerEvents='none' />
+          <Hide above="lg">
+            <IconButton bg="transparent" pointerEvents="none" />
           </Hide>
 
-          <Link to='/'>
-            <Logo color='#007355' w={{ base: 28, md: 36 }} />
+          <Link to="/">
+            <Logo color="var(--color-brand-primary)" w={{ base: 28, md: 36 }} />
           </Link>
 
-          <Hide below='lg'>
+          <Hide below="lg">
             <Links />
           </Hide>
 
-          <Hide below='lg'>
+          <Hide below="lg">
             <Text
-              as='a'
-              href='https://calendar.app.google/y3Mpi2emzFNh24119'
-              target='_blank'
-              rel='noopener noreferrer nofollow'
-              fontWeight='semibold'
-              color='#F590A2'
-              textDecoration='underline'
-              aria-label='Agendar una cita'
+              as="a"
+              href="https://calendar.app.google/y3Mpi2emzFNh24119"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              fontWeight="semibold"
+              color="var(--color-brand-accent-light)"
+              textDecoration="underline"
+              aria-label="Agendar una cita"
             >
               agendar
             </Text>
           </Hide>
 
-          <Hide above='lg'>
+          <Hide above="lg">
             <IconButton
-              bg='white'
-              icon={<IconMenu color='#F590A2' />}
+              bg="white"
+              icon={<IconMenu color="var(--color-brand-accent-light)" />}
               isRound
-              aria-label='Abrir menú de navegación'
+              aria-label="Abrir menú de navegación"
               onClick={onOpen}
             />
           </Hide>
 
-          <Drawer onClose={onClose} isOpen={isOpen} size='xs'>
+          <Drawer onClose={onClose} isOpen={isOpen} size="xs">
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
