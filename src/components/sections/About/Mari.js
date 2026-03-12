@@ -3,7 +3,7 @@ import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { Flex, Container, SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, Container, SimpleGrid, Text, Box, Show } from "@chakra-ui/react";
 
 import MariTitle from "../../../assets/vector/MariTitle";
 import MariIlu from "../../../assets/vector/MariIlu";
@@ -68,14 +68,31 @@ const Mari = () => {
           </Flex>
         </Flex>
 
-        <MariIlu />
+        <Show above="lg">
+          <MariIlu />
+        </Show>
       </Container>
 
-      <GatsbyImage
-        image={getImage(image)}
-        alt="Mariana López"
-        objectFit="cover"
-      />
+      <Box
+        w="100%"
+        as="figure"
+        overflow="hidden"
+        sx={{
+          "& .gatsby-image-wrapper": {
+            h: "auto",
+            width: { base: "200%", md: "100%" },
+            left: { base: "65%", md: "auto" },
+            transform: { base: "translateX(-65%)", md: "none" },
+          },
+        }}
+      >
+        <GatsbyImage
+          image={getImage(image)}
+          alt="Mariana López"
+          objectFit="contain"
+          style={{ height: "auto" }}
+        />
+      </Box>
     </Flex>
   );
 };

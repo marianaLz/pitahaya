@@ -128,8 +128,8 @@ const Contact = () => {
                       "Página web",
                       "UI / UX",
                       "Branding",
-                      "Ilustración",
-                      "Banners",
+                      "Paid media",
+                      "Social media",
                     ].map((item) => (
                       <Checkbox key={item}>{item}</Checkbox>
                     ))}

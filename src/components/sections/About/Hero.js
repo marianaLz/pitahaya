@@ -38,15 +38,27 @@ const titles = [
 
 const SLIDER_INTERVAL_MS = 5000;
 
+const EXIT_DURATION_MS = 400;
+
 const Hero = () => {
   const [index, setIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i) => (i + 1) % titles.length);
+      setIsExiting(true);
     }, SLIDER_INTERVAL_MS);
     return () => clearInterval(id);
   }, []);
+
+  useEffect(() => {
+    if (!isExiting) return;
+    const t = setTimeout(() => {
+      setIndex((i) => (i + 1) % titles.length);
+      setIsExiting(false);
+    }, EXIT_DURATION_MS);
+    return () => clearTimeout(t);
+  }, [isExiting]);
 
   const item = titles[index];
 
@@ -56,7 +68,7 @@ const Hero = () => {
         as={Flex}
         direction="column"
         align="center"
-        pt={{ base: 20, lg: 56 }}
+        pt={{ base: 32, lg: 56 }}
         pb={{ base: 16, lg: 48 }}
         maxW={{ base: "container.sm", lg: "container.lg" }}
         w="full"
@@ -80,7 +92,13 @@ const Hero = () => {
                 "0%": { opacity: 0, transform: "translateY(32px)" },
                 "100%": { opacity: 1, transform: "translateY(0)" },
               },
-              animation: "fadeSlideIn 1s ease-out forwards",
+              "@keyframes fadeSlideOut": {
+                "0%": { opacity: 1, transform: "translateY(0)" },
+                "100%": { opacity: 0, transform: "translateY(-24px)" },
+              },
+              animation: isExiting
+                ? `fadeSlideOut ${EXIT_DURATION_MS}ms ease-in forwards`
+                : "fadeSlideIn 1s ease-out forwards",
             }}
           >
             {item.part1 && <>{item.part1} </>}

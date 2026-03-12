@@ -1,7 +1,7 @@
 import React from "react";
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Flex, Container, SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, Container, SimpleGrid, Text, Box, Show } from "@chakra-ui/react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import AnaTitle from "../../../assets/vector/AnaTitle";
@@ -71,10 +71,31 @@ const Ana = () => {
           </Flex>
         </Flex>
 
-        <AnaIlu />
+        <Show above="lg">
+          <AnaIlu />
+        </Show>
       </Container>
 
-      <GatsbyImage image={getImage(image)} alt="Ana Marrón" objectFit="cover" />
+      <Box
+        w="100%"
+        as="figure"
+        overflow="hidden"
+        sx={{
+          "& .gatsby-image-wrapper": {
+            h: "auto",
+            width: { base: "200%", md: "100%" },
+            left: { base: "48%", md: "auto" },
+            transform: { base: "translateX(-48%)", md: "none" },
+          },
+        }}
+      >
+        <GatsbyImage
+          image={getImage(image)}
+          alt="Ana Marrón"
+          objectFit="contain"
+          style={{ height: "auto" }}
+        />
+      </Box>
     </Flex>
   );
 };

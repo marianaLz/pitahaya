@@ -43,7 +43,7 @@ const Pitahaya = () => {
           >
             <Text
               fontSize={{ base: "3xl", lg: "5xl" }}
-              fontWeight="semibold"
+              fontWeight="bold"
               lineHeight={{ base: "1.15", lg: "1" }}
               color="var(--color-text-body)"
             >
