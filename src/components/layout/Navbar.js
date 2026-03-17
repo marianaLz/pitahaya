@@ -140,7 +140,7 @@ const Navbar = () => {
           <Hide below="lg">
             <Text
               as="a"
-              href="https://calendar.app.google/y3Mpi2emzFNh24119"
+              href="https://calendar.app.google/nu9aueCzri9wtDXQ6"
               target="_blank"
               rel="noopener noreferrer nofollow"
               fontWeight="semibold"
