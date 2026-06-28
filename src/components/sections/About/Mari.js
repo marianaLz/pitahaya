@@ -41,9 +41,10 @@ const Mari = () => {
       >
         <Flex>
           <Flex
-            color="var(--color-text-body)"
+            color="var(--color-text-muted)"
             direction="column"
             fontSize={{ base: "base", lg: "lg" }}
+            lineHeight="1.7"
             gap={4}
           >
             <MariTitle w={{ base: 40, lg: 56 }} />

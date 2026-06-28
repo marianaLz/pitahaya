@@ -26,6 +26,7 @@ const links = [
   { name: "conócenos", to: "/about" },
   { name: "servicios", to: "/#services" },
   { name: "clientes", to: "/#clients" },
+  { name: "portafolio", to: "/portafolio" },
   { name: "blog", to: "https://medium.com/@hello.pitahaya.studio" },
 ];
 
@@ -130,7 +131,7 @@ const Navbar = () => {
           </Hide>
 
           <Link to="/">
-            <Logo color="var(--color-brand-primary)" w={{ base: 28, md: 36 }} />
+            <Logo color="var(--color-brand-primary)" w={{ base: 28, md: 32 }} />
           </Link>
 
           <Hide below="lg">

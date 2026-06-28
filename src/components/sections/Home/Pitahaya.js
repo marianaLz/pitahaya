@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { keyframes } from "@emotion/react";
 
 import {
   Box,
@@ -7,11 +8,13 @@ import {
   Flex,
   Grid,
   Hide,
-  keyframes,
   Text,
 } from "@chakra-ui/react";
 
 import Swirl from "../../../assets/vector/Swirl";
+import useHeroTextRotation, {
+  heroTextAnimationSx,
+} from "../../../hooks/useHeroTextRotation";
 
 const scroll = keyframes`
   from { transform: translateX(0%); }
@@ -21,7 +24,28 @@ const scroll = keyframes`
 const SCROLL_TEXT =
   "ESTA ES LA SEÑAL QUE ESTABAS ESPERANDO, COMIENZA CON UN CLIC.";
 
+const HERO_SLIDES = [
+  {
+    titleLines: ["Más allá del", "desarrollo de", "tu sitio web"],
+    subtitle:
+      "Diseñamos y mejoramos la presencia digital de tu negocio con un desarrollo personalizado",
+  },
+  {
+    titleLines: ["Identidades digitales", "con propósito", "y estrategia"],
+    subtitle:
+      "Fusionamos diseño, branding y tecnología para que tu marca conecte de verdad",
+  },
+  {
+    titleLines: ["Experiencias que", "impulsan", "tu negocio"],
+    subtitle:
+      "Desde ecommerce hasta UX/UI: soluciones a medida para crecer en línea",
+  },
+];
+
 const Pitahaya = () => {
+  const { index, isExiting } = useHeroTextRotation(HERO_SLIDES.length);
+  const slide = HERO_SLIDES[index];
+
   return (
     <Fragment>
       <Flex as="section" bg="var(--color-bg-page)" id="pitahaya">
@@ -40,24 +64,30 @@ const Pitahaya = () => {
             align={{ base: "center", lg: "flex-start" }}
             gap={{ base: 4, lg: 6 }}
             textAlign={{ base: "center", lg: "left" }}
+            minH={{ base: "220px", lg: "280px" }}
           >
-            <Text
-              fontSize={{ base: "3xl", lg: "5xl" }}
-              fontWeight="bold"
-              lineHeight={{ base: "1.15", lg: "1" }}
-              color="var(--color-text-body)"
-            >
-              Más allá del <br />
-              desarrollo de
-              <br /> tu sitio web
-            </Text>
-            <Text as="h1" fontSize="xl">
-              Diseñamos y mejoramos la presencia digital{" "}
-              <Hide below="sm">
-                <br />
-              </Hide>
-              de tu negocio con un desarrollo personalizado
-            </Text>
+            <Box key={index} sx={heroTextAnimationSx(isExiting)}>
+              <Text
+                fontSize={{ base: "3xl", lg: "5xl" }}
+                fontWeight="bold"
+                lineHeight={{ base: "1.15", lg: "1" }}
+                color="var(--color-text-body)"
+              >
+                {slide.titleLines.map((line, lineIndex) => (
+                  <React.Fragment key={lineIndex}>
+                    {lineIndex > 0 && <br />}
+                    {line}
+                  </React.Fragment>
+                ))}
+              </Text>
+              <Text as="h1" fontSize="xl" mt={{ base: 4, lg: 6 }}>
+                {slide.subtitle}
+                <Hide below="sm">
+                  <br />
+                </Hide>
+              </Text>
+            </Box>
+
             <Button
               as="a"
               href="https://calendar.app.google/nu9aueCzri9wtDXQ6"

@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { Container, Flex, Text, Box } from "@chakra-ui/react";
+
+import useHeroTextRotation, {
+  heroTextAnimationSx,
+} from "../../../hooks/useHeroTextRotation";
 
 const HIGHLIGHT_TEXT_COLOR = "var(--color-text-on-primary)";
 const OUTLINE_BORDER_COLOR = "var(--color-outline)";
@@ -36,29 +40,8 @@ const titles = [
   },
 ];
 
-const SLIDER_INTERVAL_MS = 5000;
-
-const EXIT_DURATION_MS = 400;
-
 const Hero = () => {
-  const [index, setIndex] = useState(0);
-  const [isExiting, setIsExiting] = useState(false);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIsExiting(true);
-    }, SLIDER_INTERVAL_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
-    if (!isExiting) return;
-    const t = setTimeout(() => {
-      setIndex((i) => (i + 1) % titles.length);
-      setIsExiting(false);
-    }, EXIT_DURATION_MS);
-    return () => clearTimeout(t);
-  }, [isExiting]);
+  const { index, isExiting } = useHeroTextRotation(titles.length);
 
   const item = titles[index];
 
@@ -87,19 +70,7 @@ const Hero = () => {
             fontSize={{ base: "28px", md: "40px", lg: "48px" }}
             color="var(--color-text-body)"
             textAlign="center"
-            sx={{
-              "@keyframes fadeSlideIn": {
-                "0%": { opacity: 0, transform: "translateY(32px)" },
-                "100%": { opacity: 1, transform: "translateY(0)" },
-              },
-              "@keyframes fadeSlideOut": {
-                "0%": { opacity: 1, transform: "translateY(0)" },
-                "100%": { opacity: 0, transform: "translateY(-24px)" },
-              },
-              animation: isExiting
-                ? `fadeSlideOut ${EXIT_DURATION_MS}ms ease-in forwards`
-                : "fadeSlideIn 1s ease-out forwards",
-            }}
+            sx={heroTextAnimationSx(isExiting)}
           >
             {item.part1 && <>{item.part1} </>}
             {item.highlight && (

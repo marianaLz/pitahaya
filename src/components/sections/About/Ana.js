@@ -42,13 +42,14 @@ const Ana = () => {
           color="var(--color-text-body)"
           direction="column"
           fontSize={{ base: "base", lg: "lg" }}
+          lineHeight="1.7"
           gap={4}
         >
           <AnaTitle w={{ base: 40, lg: 56 }} />
           <Flex
-            color="var(--color-text-body)"
+            fontSize={{ base: "md", lg: "lg" }}
             direction="column"
-            fontSize={{ base: "base", lg: "lg" }}
+            color="var(--color-text-muted)"
             gap={4}
           >
             <Text>
