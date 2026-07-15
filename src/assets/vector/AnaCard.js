@@ -46,7 +46,7 @@ const AnaCard = ({ onClick, ...props }) => {
           cy="358.43"
           r="14.5"
           fill="var(--color-black)"
-          onClick={() => onClick("KarlyCard")}
+          onClick={() => onClick("MariCard")}
         />
         <path
           d="M196.843 366.85L203.363 360.33C204.133 359.56 204.133 358.3 203.363 357.53L196.843 351.01"

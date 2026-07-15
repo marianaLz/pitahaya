@@ -205,7 +205,7 @@ const MariCard = ({ onClick, ...props }) => {
           r="14.5"
           transform="matrix(-1 0 0 1 174.933 343.93)"
           fill="var(--color-black)"
-          onClick={() => onClick("KarlyCard")}
+          onClick={() => onClick("AnaCard")}
         />
         <path
           d="M163.023 366.85L156.503 360.33C155.733 359.56 155.733 358.3 156.503 357.53L163.023 351.01"
